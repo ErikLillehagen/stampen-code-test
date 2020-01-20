@@ -8,6 +8,13 @@ In this test you will be asked to perform a few tasks in a simple React app to s
 * Don't rush. We rather see 2 well implemented features than 4 bad ones.
 * Even if you feel like your results were bad, submit the code and let's discuss it. We'd love to learn about your thought process about where the shortcommings happened and why.
 
+##	Setting up the project
+
+All you reallt need to get going is to run ```npm install``` in your terminal.
+Once the dependencies are installed, run ```npm start``` and the project will be fired up in your browser.
+
+Node-fetch is installed as a dependency and behaves exactly like the browser native fetch API, but feel free to use axios or any other library for http calls if you have other preferences.
+
 ##	The Task
 
 In this test, you will be handed an empty Star Wars themed React app with a couple of stale components, found in src/Components:
