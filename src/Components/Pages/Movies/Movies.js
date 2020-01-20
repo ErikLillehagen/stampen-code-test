@@ -7,7 +7,7 @@ import MovieListItem from '../../UI/MovieListItem/MovieListItem'
  * Static data for movies.
  * Should be replaced by data fetched from the Star Wars API
  */
-const movies = [
+const data = [
 	{
 		title: 'The Phantom Menace',
 		episode_id: 1,
@@ -49,7 +49,7 @@ const Movies = (props) => {
 		<h1>Movies</h1>
 
 		<div className="movieList">
-			{ movies.map((singleMovie, index) => <MovieListItem
+			{ data.map((singleMovie, index) => <MovieListItem
 				key={ index }
 				episodeId={ singleMovie.episode_id }
 				title={ singleMovie.title }

@@ -3,7 +3,7 @@ import './chars.scss'
 
 import CharacterListItem from '../../UI/CharacterListItem/CharacterListItem'
 
-const characters = [
+const data = [
 	{
 		name: 'Luke Skywalker',
 		height: '172',
@@ -46,7 +46,7 @@ const Characters = (props) => {
 		<h1>Characters</h1>
 
 		<div className="characterList">
-			{ characters.map((singleCharacter, index) => <CharacterListItem
+			{ data.map((singleCharacter, index) => <CharacterListItem
 				key={ index }
 				character={ singleCharacter }
 			/>) }
