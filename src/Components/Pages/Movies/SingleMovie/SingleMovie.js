@@ -1,10 +1,7 @@
 import React from 'react'
 
 const SingleMovie = (props) => {
-	const {
-		movie,
-		onMovieDeselect
-	} = props
+	const { movie } = props
 
 	return <div className="singleMovie">
 		<h1>Single Movie</h1>
@@ -15,9 +12,7 @@ const SingleMovie = (props) => {
 
 		<p>{ movie.opening_crawl }</p>
 
-		<button
-			onClick={ onMovieDeselect }
-		>Back</button>
+		<button>Back</button>
 	</div>
 }
 

@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react'
-import Fetch from 'node-fetch'
+import React from 'react'
 import './movies.scss'
 
 import MovieListItem from '../../UI/MovieListItem/MovieListItem'
@@ -46,14 +45,11 @@ const movies = [
  * @description - Functional component that rendes a list of Star Wars movies
  */
 const Movies = (props) => {
-	const { onMovieClick, movies } = props
-
 	return <div className="page" id="movies">
 		<h1>Movies</h1>
 
 		<div className="movieList">
 			{ movies.map((singleMovie, index) => <MovieListItem
-				onMovieClick={ onMovieClick }
 				key={ index }
 				episodeId={ singleMovie.episode_id }
 				title={ singleMovie.title }

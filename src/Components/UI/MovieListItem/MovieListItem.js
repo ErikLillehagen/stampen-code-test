@@ -4,14 +4,10 @@ const MovieListItem = (props) => {
 	const {
 		episodeId,
 		title,
-		releaseDate,
-		onMovieClick
+		releaseDate
 	} = props
 
-	return <div
-		className="movieListItem"
-		onClick={ () => onMovieClick(episodeId) }
-	>
+	return <div className="movieListItem" >
 		<h4>Espiode { episodeId }</h4>
 		<h2>{ title }</h2>
 		<p>Released { releaseDate }</p>
