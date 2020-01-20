@@ -1,16 +1,8 @@
 # React Coding Test
 
-In this test you will be asked to perform a few tasks in a simple React app to showcase what you can do. Before you start looking at the tasks and thinking about how to solve them, keep these important facts in mind:
-
-* Simplicity and readability are at the core of good code. Keep your solutions as straight forward and readable as possible.
-* We won't judge you based on how you did something, but based on **WHY** you chose to do it that way.
-* You are free to modify the existing components and codebase at will (we will be asking why).
-* Don't rush. We rather see 2 well implemented features than 4 bad ones.
-* Even if you feel like your results were bad, submit the code and let's discuss it. We'd love to learn about your thought process about where the shortcommings happened and why.
-
 ##	Setting up the project
 
-All you reallt need to get going is to run ```npm install``` in your terminal.
+All you need to get going is to run ```npm install``` in your terminal.
 Once the dependencies are installed, run ```npm start``` and the project will be fired up in your browser.
 
 Node-fetch is installed as a dependency and behaves exactly like the browser native fetch API, but feel free to use axios or any other library for http calls if you have other preferences.
@@ -42,6 +34,11 @@ Some of these components hold a hardcoded data object that they render into view
 
 ## Tips
 
+* Simplicity and readability are at the core of good code. Keep your solutions as straight forward and readable as possible.
+* We won't judge you based on how you did something, but based on **WHY** you chose to do it that way.
+* You are free to modify the existing components and codebase at will (we will be asking why).
+* Don't rush. We rather see 2 well implemented features than 4 bad ones.
+* Even if you feel like your results are bad, submit the code and let's discuss it. We'd love to learn about your thought process about where the shortcommings happened and why.
+
 Keep an eye on network calls. We want to do as few of these as possible.
 If you have any questions regarding the task, contact andreas.casen@stampen.com.
-
