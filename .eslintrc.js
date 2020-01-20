@@ -25,7 +25,8 @@ module.exports = {
 		"no-tabs": 0,
 		"mocha/no-exclusive-tests": "error",
 		"space-before-function-paren": ["error", "never"],
-		"no-control-regex": 0
+		"no-control-regex": 0,
+		"react/prop-types": 0
 	},
 	"plugins": [
 		"mocha",
