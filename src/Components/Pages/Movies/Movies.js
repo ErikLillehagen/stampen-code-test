@@ -1,15 +1,12 @@
 import React, { Suspense, useEffect, useState } from 'react'
-import './movies.scss'
-
-import MovieListItem from '../../UI/MovieListItem/MovieListItem'
-import Loading from '../../UI/Loading/Loading'
 import { fetchData } from '../../util/fetch'
 import { sortEpisodesByNumber } from './util'
 
-/**
- * @function Movies
- * @description - Functional component that renders a list of Star Wars movies
- */
+import MovieListItem from '../../UI/MovieListItem/MovieListItem'
+import Loading from '../../UI/Loading/Loading'
+
+import './movies.scss'
+
 const Movies = () => {
 	const [data, setData] = useState()
 	useEffect(() => {
@@ -22,7 +19,9 @@ const Movies = () => {
 	return (
 		<Suspense fallback={<Loading />}>
 			<div className="page" id="movies">
-				<h1>Movies</h1>
+				<div className="sub-banner">
+					<h1>Movies</h1>
+				</div>
 				<div className="movieList">
 					{ data?.map((singleMovie, index) => <MovieListItem
 						key={ index }

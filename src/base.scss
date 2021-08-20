@@ -13,11 +13,11 @@ body {
 
 	h1 {
 		color: yellow;
-		margin-top: 0;
 		margin: 0.1rem 0;
-		font-family: DistantGalaxy;
+		font-family: DistantGalaxy, serif;
 		font-weight: normal;
-		font-display: swap;
+		font-size: 2rem;
+		
 	}
 }
 
@@ -29,5 +29,6 @@ body {
 	font-family: DistantGalaxy;
 	src: local("DistantGalaxy"),
 		url("./fonts/SfDistantGalaxy.ttf") format("truetype");
+	font-display: swap;
 }
 

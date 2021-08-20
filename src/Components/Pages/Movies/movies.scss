@@ -1,34 +1,42 @@
 @import url("../../../colors.scss");
+.page {
+	.sub-banner {
+		padding-bottom: 1rem;
+	}
+	.movieList {
+		width: 100%;
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		grid-gap: 1rem;
 
-.movieList {
-	width: 100%;
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr;
-	grid-gap: 1rem;
-	
-	.movieListItem {
-		background-color: black;
-		padding: 1rem;
-		border-radius: .3rem;
-		cursor: pointer;
-		color: var(--sw-yellow);
-		border: 2px solid var(--sw-yellow);
-
-		&:hover {
-			background-color: var(--sw-yellow-dark);
-		}
-		a {
-			text-decoration: none;
+		.movieListItem {
+			background-color: black;
+			padding: 1rem;
+			border-radius: .3rem;
+			cursor: pointer;
 			color: var(--sw-yellow);
-		}
-		h2 {
-			margin: .3rem 0;
-		}
-		h4 {
-			margin: 0;
-		}
-		p {
-			margin-top: 0;
+			border: 2px solid var(--sw-yellow);
+
+			&:hover {
+				background-color: var(--sw-yellow-dark);
+			}
+
+			a {
+				text-decoration: none;
+				color: var(--sw-yellow);
+			}
+
+			h2 {
+				margin: .3rem 0;
+			}
+
+			h4 {
+				margin: 0;
+			}
+
+			p {
+				margin-top: 0;
+			}
 		}
 	}
 }

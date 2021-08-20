@@ -1,11 +1,12 @@
 import React, { Suspense, useContext, useEffect, useState } from 'react'
-import './characters.scss'
-
-import CharacterListItem from '../../UI/CharacterListItem/CharacterListItem'
+import { useHistory } from 'react-router-dom'
 import { fetchData } from '../../util/fetch'
 import { Context } from '../../../Store'
+
+import CharacterListItem from '../../UI/CharacterListItem/CharacterListItem'
 import Loading from '../../UI/Loading/Loading'
-import { useHistory } from 'react-router-dom'
+
+import './characters.scss'
 
 const Characters = () => {
 	const [state] = useContext(Context)

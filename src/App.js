@@ -1,8 +1,9 @@
 import React from 'react'
-import './base.scss'
 
 import Navbar from './Components/UI/Navbar/Navbar'
 import Store from './Store'
+
+import './base.scss'
 
 function App() {
 	return (

@@ -1,12 +1,15 @@
 import React, { Suspense, useContext, useEffect, useState } from 'react'
-import Loading from '../../../UI/Loading/Loading'
-import './singleMovie.scss'
 import { fetchData } from '../../../util/fetch'
 import { Context } from '../../../../Store'
 import { romanize } from '../util'
 import { useHistory } from 'react-router-dom'
+
+import Loading from '../../../UI/Loading/Loading'
+
+import './singleMovie.scss'
+
 const SingleMovie = ({ match: { params: { title } } }) => {
-	const [state, dispatch] = useContext(Context)
+	const [, dispatch] = useContext(Context)
 	const [movie, setMovie] = useState([])
 	const history = useHistory()
 	useEffect(() => {

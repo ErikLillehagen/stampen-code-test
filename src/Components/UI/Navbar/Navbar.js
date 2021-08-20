@@ -1,9 +1,10 @@
 import React, { lazy, Suspense } from 'react'
-
-import StarWarsLogo from '../../../img/SW.png'
 import { BrowserRouter, Link, Route, Switch } from 'react-router-dom'
-import './navbar.scss'
+import StarWarsLogo from '../../../img/SW.png'
 import Loading from '../../UI/Loading/Loading'
+
+import './navbar.scss'
+
 const Movies = lazy(() => import('../../Pages/Movies/Movies'))
 const SingleMovie = lazy(() => import('../../Pages/Movies/SingleMovie/SingleMovie'))
 const Characters = lazy(() => import('../../Pages/Characters/Characters'))

@@ -1,8 +1,9 @@
 import React from 'react'
 import { useLocation } from 'react-router-dom'
 
-import './noMatch.scss'
 import Yoda from '../../../img/yoda.png'
+
+import './noMatch.scss'
 
 const NoMatch = () => {
 	const location = useLocation()
