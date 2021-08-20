@@ -10,6 +10,8 @@ const Reducer = (state, action) => {
 				...state,
 				selectedMovie: action.payload
 			}
+		default:
+			return state
 	}
 }
 
