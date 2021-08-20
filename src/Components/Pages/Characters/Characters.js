@@ -18,7 +18,7 @@ const Characters = () => {
 			})
 		}
 		collectData()
-	}, [])
+	}, [state.characters])
 
 	if (!state.selectedMovie) { history.push('/') }
 	return (

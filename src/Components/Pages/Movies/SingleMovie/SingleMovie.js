@@ -15,7 +15,7 @@ const SingleMovie = ({ match: { params: { title } } }) => {
 			dispatch({ type: 'SET_CHARACTERS', payload: result.results[0].characters })
 			dispatch({ type: 'SET_MOVIE', payload: result.results[0].title })
 		})
-	}, [title])
+	}, [title, dispatch])
 	return (
 		<Suspense fallback={<Loading />}>
 			<div className="page">

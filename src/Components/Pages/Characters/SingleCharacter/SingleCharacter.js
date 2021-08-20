@@ -28,7 +28,7 @@ const SingleCharacter = ({ match: { params: { name } } }) => {
 			})
 		}
 		collectData()
-	}, [])
+	}, [name])
 
 	return (
 		<Suspense fallback={<Loading />}>
