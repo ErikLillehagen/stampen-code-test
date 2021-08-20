@@ -1,21 +1,36 @@
-import React from 'react'
-import './navbar.scss'
+import React, { lazy, Suspense } from 'react'
 
 import StarWarsLogo from '../../../img/SW.png'
+import { BrowserRouter, Link, Route, Switch } from 'react-router-dom'
+import './navbar.scss'
+import Loading from '../../UI/Loading/Loading'
+const Movies = lazy(() => import('../../Pages/Movies/Movies'))
+const SingleMovie = lazy(() => import('../../Pages/Movies/SingleMovie/SingleMovie'))
+const Characters = lazy(() => import('../../Pages/Characters/Characters'))
+const SingleCharacter = lazy(() => import('../../Pages/Characters/SingleCharacter/SingleCharacter'))
+const NoMatch = lazy(() => import('../../Pages/NoMatch/NoMatch'))
 
-const Navbar = (props) => {
-	return <nav className="navbar">
-		<div className="nav-left">
-			<button className="home">
-				<img src={ StarWarsLogo } className="logo" />
-			</button>
-		</div>
-
-		<div className="nav-right">
-			<button className="navigate">Movies</button>
-			<button className="navigate">Characters</button>
-		</div>
-	</nav>
+const Navbar = () => {
+	return (
+		<Suspense fallback={<Loading />}>
+			<BrowserRouter>
+				<nav className="navbar">
+					<div className="nav-left">
+						<Link to="/">
+							<img src={ StarWarsLogo } className="logo" alt="STAR WARS"/>
+						</Link>
+					</div>
+				</nav>
+				<Switch>
+					<Route exact path="/" component={Movies}/>
+					<Route path="/movie/:title" component={SingleMovie} />
+					<Route exact path="/characters" component={Characters} />
+					<Route path="/character/:name" component={SingleCharacter} />
+					<Route path="*" component={NoMatch} />
+				</Switch>
+			</BrowserRouter>
+		</Suspense>
+	)
 }
 
 export default Navbar

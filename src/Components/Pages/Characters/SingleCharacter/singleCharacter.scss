@@ -1,0 +1,47 @@
+.sub-banner {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 4fr 0fr 2fr;
+  grid-gap: 1rem;
+  padding-bottom: 1rem;
+  button {
+    cursor: pointer;
+    background-color: black;
+    border: 2px solid var(--sw-yellow);
+    border-radius: .3rem;
+    color: var(--sw-yellow);
+    font-family: 'Pathway Gothic One', sans-serif;
+    line-height: 90%;
+  }
+}
+.topPanel {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1rem;
+  padding-bottom: 1rem;
+
+  .singleCharacterListItem, .planetListItem, .speciesBox, {
+    background-color: black;
+    padding: 1rem;
+    border-radius: .3rem;
+    border: 2px solid var(--sw-yellow);
+    color: var(--sw-yellow);
+  }
+}
+
+
+
+.starshipBox {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
+  .starshipListItem {
+    background-color: black;
+    padding: 1rem;
+    border-radius: .3rem;
+    border: 2px solid var(--sw-yellow);
+    color: var(--sw-yellow);
+  }
+}
+

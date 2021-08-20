@@ -1,0 +1,16 @@
+.lostBox {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
+
+  .noMatch {
+    background-color: #ccc;
+    padding: 1rem;
+    border-radius: .3rem;
+  }
+
+  .yoda {
+    border-radius: .3rem;
+  }
+}

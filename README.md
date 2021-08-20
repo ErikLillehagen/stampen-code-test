@@ -24,7 +24,7 @@ In this test, you will be handed an empty Star Wars themed React app with a coup
 Some of these components hold a hardcoded data object that they render into view. Complete the following tasks to achieve MVP:
 
 1. Use the nav buttons in the **UI/Navbar** component to allow the user to switch between the **Movies** and **Characters** pages.
-2. Replace the hardCoded data in **Pages/Movies** with live data fetched from the Star Wars API (https://swapi.co/).
+2. Replace the hardCoded data in **Pages/Movies** with live data fetched from the Star Wars API (https://swapi.dev/).
 3. Make use of component states and hooks across the app to ensure you are fetching data as little as possible, only when needed and at the right time.
 4. Use the **UI/Loading** component as placeholder when loading movie data.
 5. When a user clicks on a movie item in **Pages/Movie**, switch to the **SingleMovie** page, and make it display data for the clicked movie.

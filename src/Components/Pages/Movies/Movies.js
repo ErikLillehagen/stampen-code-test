@@ -1,63 +1,40 @@
-import React from 'react'
+import React, { Suspense, useEffect, useState } from 'react'
 import './movies.scss'
 
 import MovieListItem from '../../UI/MovieListItem/MovieListItem'
-
-/**
- * Static data for movies.
- * Should be replaced by data fetched from the Star Wars API
- */
-const data = [
-	{
-		title: 'The Phantom Menace',
-		episode_id: 1,
-		release_date: '1983-05-25'
-	},
-	{
-		title: 'Return of the Jedi',
-		episode_id: 2,
-		release_date: '1983-05-25'
-	},
-	{
-		title: 'Return of the Jedi',
-		episode_id: 3,
-		release_date: '1983-05-25'
-	},
-	{
-		title: 'A New Hope',
-		episode_id: 4,
-		release_date: '1977-05-25'
-	},
-	{
-		title: 'The Empire Strikes Back',
-		episode_id: 5,
-		release_date: '1980-05-17'
-	},
-	{
-		title: 'Return of the Jedi',
-		episode_id: 6,
-		release_date: '1983-05-25'
-	}
-]
+import Loading from '../../UI/Loading/Loading'
+import { fetchData } from '../../util/fetch'
+import { sortEpisodesByNumber } from './util'
 
 /**
  * @function Movies
- * @description - Functional component that rendes a list of Star Wars movies
+ * @description - Functional component that renders a list of Star Wars movies
  */
-const Movies = (props) => {
-	return <div className="page" id="movies">
-		<h1>Movies</h1>
+const Movies = () => {
+	const [data, setData] = useState()
+	useEffect(() => {
+		const collectData = async() => {
+			await fetchData('https://swapi.dev/api/films', (result) => setData(sortEpisodesByNumber(result)))
+		}
+		collectData()
+	}, [])
 
-		<div className="movieList">
-			{ data.map((singleMovie, index) => <MovieListItem
-				key={ index }
-				episodeId={ singleMovie.episode_id }
-				title={ singleMovie.title }
-				releaseDate={ singleMovie.release_date }
-			/>) }
-		</div>
-
-	</div>
+	return (
+		<Suspense fallback={<Loading />}>
+			<div className="page" id="movies">
+				<h1>Movies</h1>
+				<div className="movieList">
+					{ data?.map((singleMovie, index) => <MovieListItem
+						key={ index }
+						episodeId={ singleMovie.episode_id }
+						title={ singleMovie.title }
+						releaseDate={ singleMovie.release_date }
+						characters={ singleMovie.characters }
+					/>) }
+				</div>
+			</div>
+		</Suspense>
+	)
 }
 
 export default Movies

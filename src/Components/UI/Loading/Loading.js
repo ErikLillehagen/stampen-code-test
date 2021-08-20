@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-
+import './loading.scss'
 const Loading = (props) => {
 	const [dots, setDots] = useState('')
 	setInterval(() => {
@@ -10,7 +10,7 @@ const Loading = (props) => {
 		}
 	}, 600)
 
-	return <p>Loading { dots }</p>
+	return <p className='loader'>Loading { dots }</p>
 }
 
 export default Loading

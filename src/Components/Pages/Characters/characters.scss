@@ -1,0 +1,66 @@
+.page {
+
+	.sub-banner {
+		width: 100%;
+		display: grid;
+		grid-template-columns: 5fr 0fr 2fr;
+		grid-gap: 1rem;
+		padding-bottom: 1rem;
+		button {
+			cursor: pointer;
+			background-color: black;
+			border: 2px solid var(--sw-yellow);
+			border-radius: .3rem;
+			color: var(--sw-yellow);
+			font-family: 'Pathway Gothic One', sans-serif;
+			line-height: 90%;
+		}
+	}
+	.characterList {
+		width: 100%;
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+		grid-gap: 1rem;
+
+		.characterListItem {
+			cursor: pointer;
+			background-color: black;
+			border: 2px solid var(--sw-yellow);
+			padding: 1rem;
+			border-radius: .3rem;
+
+			&:hover {
+				background-color: var(--sw-yellow-dark);
+			}
+
+			a {
+				text-decoration: none;
+				color: var(--sw-yellow);
+
+				h2 {
+					margin-top: 0;
+					text-decoration: none;
+				}
+
+				.character-data {
+					margin: 0;
+					width: 100%;
+
+					tbody {
+						width: 100%;
+					}
+
+					td {
+						color: var(--sw-yellow);
+						text-align: right;
+					}
+
+					.bold {
+						font-weight: bold;
+						text-align: left;
+					}
+				}
+			}
+		}
+	}
+}

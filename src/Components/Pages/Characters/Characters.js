@@ -1,57 +1,43 @@
-import React from 'react'
-import './chars.scss'
+import React, { Suspense, useContext, useEffect, useState } from 'react'
+import './characters.scss'
 
 import CharacterListItem from '../../UI/CharacterListItem/CharacterListItem'
+import { fetchData } from '../../util/fetch'
+import { Context } from '../../../Store'
+import Loading from '../../UI/Loading/Loading'
+import { useHistory } from 'react-router-dom'
 
-const data = [
-	{
-		name: 'Luke Skywalker',
-		height: '172',
-		weight: '77',
-		gender: 'male',
-		birth_year: '19BBY',
-		films: [
-			'https://swapi.co/api/films/2/',
-			'https://swapi.co/api/films/6/',
-			'https://swapi.co/api/films/3/',
-			'https://swapi.co/api/films/1/',
-			'https://swapi.co/api/films/7/'
-		]
-	},
-	{
-		name: 'Luke Skywalker',
-		height: '172',
-		weight: '77',
-		gender: 'male',
-		birth_year: '19BBY'
-	},
-	{
-		name: 'Luke Skywalker',
-		height: '172',
-		weight: '77',
-		gender: 'male',
-		birth_year: '19BBY'
-	},
-	{
-		name: 'Luke Skywalker',
-		height: '172',
-		weight: '77',
-		gender: 'male',
-		birth_year: '19BBY'
-	}
-]
+const Characters = () => {
+	const [state] = useContext(Context)
+	const [characters, setCharacters] = useState([])
+	const history = useHistory()
+	useEffect(() => {
+		const collectData = async() => {
+			state.characters.forEach((characterUri) => {
+				fetchData(characterUri, (result) => setCharacters(prev => ([...prev, result])))
+			})
+		}
+		collectData()
+	}, [])
 
-const Characters = (props) => {
-	return <div className="page" id="characters">
-		<h1>Characters</h1>
-
-		<div className="characterList">
-			{ data.map((singleCharacter, index) => <CharacterListItem
-				key={ index }
-				character={ singleCharacter }
-			/>) }
-		</div>
-	</div>
+	if (!state.selectedMovie) { history.push('/') }
+	return (
+		<Suspense fallback={<Loading />}>
+			<div className="page" id="characters">
+				<div className="sub-banner">
+					<h1>{`Characters in ${ state.selectedMovie }`}</h1>
+					<div />
+					<button onClick={() => history.goBack()}>Back to movie details</button>
+				</div>
+				<div className="characterList">
+					{ characters.map((singleCharacter, index) => <CharacterListItem
+						key={ index }
+						character={ singleCharacter }
+					/>) }
+				</div>
+			</div>
+		</Suspense>
+	)
 }
 
 export default Characters

@@ -1,19 +1,33 @@
+
+
 body {
 	margin: 0;
+	height: 100%;
+	background-color: black;
+	font-family: 'Pathway Gothic One', sans-serif;
 }
 
 .app {
 	font-size: 14px;
-	background-color: black;
 	padding: 2rem;
-	height: 100vh;
 
 	h1 {
 		color: yellow;
 		margin-top: 0;
+		margin: 0.1rem 0;
+		font-family: DistantGalaxy;
+		font-weight: normal;
+		font-display: swap;
 	}
 }
 
 .page {
 	margin: 4rem 0;
 }
+
+@font-face {
+	font-family: DistantGalaxy;
+	src: local("DistantGalaxy"),
+		url("./fonts/SfDistantGalaxy.ttf") format("truetype");
+}
+
